@@ -2,7 +2,6 @@ class ChatroomsController < ApplicationController
     before_action :find_chatroom, only: [:show, :edit, :update, :destroy]
     
     def index
-        
     end
     def new
         @chatroom = Chatroom.new
