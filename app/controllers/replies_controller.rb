@@ -30,7 +30,7 @@ class RepliesController < ApplicationController
 
     private
     def reply_params
-        params.require(:reply).permit(:message_id, :from_id)
+        params.require(:reply).permit(:message_id, :from_id, :content)
     end
 
     def find_user
