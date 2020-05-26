@@ -6,14 +6,18 @@ class User < ApplicationRecord
 
 
     def inbox
-        Message.all
-        # Message.all.select do |message|
-        #     message.to_id==self.id
-        # end
+        Message.all.select do |message|
+            message.to_id==self.id
+        end
     end
     def sent
         Message.all.select do |message|
             message.from_id==self.id
         end
+    end
+    def messages
+       message_array = self.inbox
+       message_array.concat(self.sent)
+       message_array
     end
 end
