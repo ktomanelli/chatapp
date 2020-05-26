@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.chat-window {
+  display: inline-block;
+}

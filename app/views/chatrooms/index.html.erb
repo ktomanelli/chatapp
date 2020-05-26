@@ -1,1 +1,14 @@
-Chatroom Index
+
+<div class='chat-window'>
+    <div>
+        <ul>
+            <%Chatroom.all.each do |chatroom|%>
+            <li><%=chatroom.title%></li>
+            <%end%>
+        </ul>
+    </div>
+
+    <div>
+        
+    </div>
+</div>
