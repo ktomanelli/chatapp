@@ -1,1 +1,15 @@
-<%=render "partials/sidebar"%>
+<h1>Profile</h1>
+
+<% if @current_user.id  ==  @user.id %>
+<p>Name: <%= @user.name %></p>
+<% end %>
+<p>Username: <%= @user.username %></p>
+<img src="<%= @user.img_url%>" alt=" <%= @user.name %>">
+<p>Bio: <%= @user.bio %></p>
+
+<% if @current_user.id  ==  @user.id %>
+<%= link_to "New Message", new_message_path %>
+<%= link_to "Edit Profile", edit_user_path(@user.id)%>
+<%= link_to "Chatrooms", chatrooms_path %>
+<%= link_to "Delete", user_path(@user), method: :delete %>
+<% end %>
