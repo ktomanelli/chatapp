@@ -1,1 +1,8 @@
-edit form for chatroom 
+<h3>Edit Chatroom</h3>
+<%= form_for @chatroom do |f| %>
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+    
+<%= f.submit %>
+<% end %>
