@@ -1,1 +1,14 @@
-new form for chatroom
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+     <p><%= error %></p>
+    <% end %>
+<% end %>
+
+<h3>New Chatroom</h3>
+<%= form_for @chatroom do |f| %>
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+    
+<%= f.submit %>
+<% end %>

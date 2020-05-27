@@ -1,1 +1,14 @@
-edit html form 
+<h3>Edit Reply</h3>
+<%= form_for @message do |f| %>
+
+<%= f.label :message_id %>
+<%= f.collection_select :message_id, Message.all, :id, :chatroom_id %>
+
+<%= f.label :to_id %>
+<%= f.collection_select  :to_id, User.all, :id, :name %>
+
+<%= f.label :content, 'Reply' %>
+<%= f.text_field :content %>
+
+<%= f.submit %>
+<% end %>
