@@ -41,6 +41,13 @@
   margin: 1%;
   border-radius: 5px;
 }
+#user_img {
+  width: 30px;
+  height: 30px;
+}
+#logout {
+  text-align: right;
+}
 
 #anchor {
   overflow-anchor: auto;

@@ -10,9 +10,12 @@
   </head>
 
   <body>
-<%= link_to 'login', login_path %><br/>
-<%= link_to 'Create an Account', new_user_path %><br/>
-<%= link_to 'logout', logout_path %><br/>
-    <%= yield %>
+<%if session[:user_id]==nil%>
+  <%= link_to 'login', login_path %><br/>
+  <%= link_to 'Create an Account', new_user_path %><br/>
+<%else%>
+  <p id="logout"><%= link_to 'logout', logout_path %></p>
+  <%=render "partials/sidebar"%>
+<%end%>
   </body>
 </html>

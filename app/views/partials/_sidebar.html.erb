@@ -1,11 +1,10 @@
-
 <div id='app'>
     <div id='sidebar'>
         <ul>
-            <%Chatroom.all.each do |chatroom|%>
+            <%Chatroom.get_active_chatrooms(session[:user_id]).each do |chatroom|%>
             <li id="chatroom">
-            <img src="<%=chatroom.users[0].img_url%>">
-            <img src="<%=chatroom.users[1].img_url%>">
+            <img id="user_img" src="<%=chatroom.users[0].img_url%>">
+            <img id="user_img" src="<%=chatroom.users[1].img_url%>">
             <%=link_to chatroom.title,chatroom_path(chatroom)%>
             </li>
             <%end%>
@@ -13,7 +12,7 @@
     </div>
 
     <div id="messages">
-        <%=render "messages"%>
+        <%=yield%>
         <div id="anchor"></div>
     </div>
 </div>
