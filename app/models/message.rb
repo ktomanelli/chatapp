@@ -8,8 +8,8 @@ class Message < ApplicationRecord
         self.from
     end
 
-    def to_or_from
-        if self.from_id==@current_user
+    def to_or_from(user)
+        if self.from_id==user.id
             return "from"
         end
         return "to"

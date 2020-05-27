@@ -10,6 +10,6 @@
 <% if @current_user.id  ==  @user.id %>
 <%= link_to "New Message", new_message_path %>
 <%= link_to "Edit Profile", edit_user_path(@user.id)%>
-<%= link_to "Chatrooms", chatrooms_path %>
+<%= link_to "Chatrooms", home_path %>
 <%= link_to "Delete", user_path(@user), method: :delete %>
 <% end %>

@@ -10,12 +10,30 @@
   </head>
 
   <body>
-<%if session[:user_id]==nil%>
-  <%= link_to 'login', login_path %><br/>
-  <%= link_to 'Create an Account', new_user_path %><br/>
-<%else%>
-  <p id="logout"><%= link_to 'logout', logout_path %></p>
-  <%=render "partials/sidebar"%>
+  <%if @current_user==nil%>
+    <%= link_to 'login', login_path %><br/>
+    <%= link_to 'Create an Account', new_user_path %><br/>
+    <%=yield%>
+  <%else%>
+    <p id="logout"><%= link_to 'logout', logout_path %></p>
+    <div id='app'>
+    <div id='sidebar'>
+        <ul>
+          <%Chatroom.get_active_chatrooms(@current_user.id).each do |chatroom|%>
+            <li id="chatroom">
+              <img id="user_img" src="<%=chatroom.users[0].img_url%>">
+              <img id="user_img" src="<%=chatroom.users[1].img_url%>">
+              <%=link_to chatroom.title,chatroom_path(chatroom)%>
+            </li>
+          <%end%>
+        </ul>
+    </div>
+
+    <div id="messages">
+        <%=yield%>
+        <div id="anchor"></div>
+    </div>
+</div>
 <%end%>
   </body>
 </html>

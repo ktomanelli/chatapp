@@ -28,11 +28,19 @@
 
 #messages {
   padding-left: 30%;
-  overflow-anchor: none;
+  display: flex;
+  flex-direction: column;
 }
 
-#message {
+#from {
   background-color: #5fc9f8;
+  padding: 1%;
+  margin-left: auto;
+  margin-right: 0;
+  border-radius: 25px;
+}
+#to {
+  background-color: #d3d3d3;
   padding: 1%;
   border-radius: 25px;
 }

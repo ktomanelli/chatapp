@@ -1,3 +1,4 @@
-<%@chatroom.messages.each do |message|%>
-    <p id="<%=message.to_or_from(session[:user_id])%>%" style="width:<%=message.content.length*6%>px"><%=message.content%></p>
-<%end%>
+
+    <%@chatroom.messages.each do |message|%>
+        <p id="<%=message.to_or_from(@current_user)%>" style="width:<%=message.content.length*6%>px"><%=message.content%></p>
+    <%end%>
