@@ -18,7 +18,6 @@ class ChatroomsController < ApplicationController
     end
     
     def edit
-    
     end
     
     def update
@@ -42,7 +41,6 @@ class ChatroomsController < ApplicationController
     def chatroom_params
         params.require(:chatroom).permit(:title)
     end
-
 
     def display_messages
         if params[:id]
