@@ -8,4 +8,7 @@ class Message < ApplicationRecord
         self.from
     end
 
+    def to_or_from
+        
+    end
 end
