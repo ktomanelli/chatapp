@@ -31,6 +31,8 @@ end
         c=Chatroom.create(title:"#{users[0].name} + #{users[1].name}")
         u1=users.sample
         u2=get_other(users,u1)
+        UserChatroom.create(user_id:u1.id,chatroom_id:c.id)
+        UserChatroom.create(user_id:u2.id,chatroom_id:c.id)
         rand(20..50).times do
             Message.create(content:Faker::Lorem.sentences(number: 2),from_id:u1.id,to_id:u2.id,chatroom_id:c.id)
         end
