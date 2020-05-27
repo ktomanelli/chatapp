@@ -1,3 +1,3 @@
 <%@chatroom.messages.each do |message|%>
-    <p><%=message.content%></p>
+    <p id="message" style="width:<%=message.content.length*6%>px"><%=message.content%></p>
 <%end%>

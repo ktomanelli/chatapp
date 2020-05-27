@@ -13,11 +13,9 @@ Chatroom.destroy_all
 Reply.destroy_all
 Reaction.destroy_all
 
-ramon = User.create(name:'Ramon',username:'ramon',password:'r12345')
-kyle = User.create(name:'Kyle',username:'kyle',password:'k12345')
-
-15.times do 
-    User.create(name:Faker::Name.name,username:"#{Faker::Name.initials(number: 1)+Faker::Name.last_name}",password:"#{Faker::Name.initials(number: 1)}12345")
+20.times do 
+    User.create(name:Faker::Name.name,username:"#{Faker::Name.initials(number: 1)+Faker::Name.last_name}",password:"#{Faker::Name.initials(number: 1)}12345",img_url:
+    Faker::Avatar.image(size: "50x50", format: "jpg"))
 end
 
 def get_other(array,val)
@@ -27,7 +25,7 @@ def get_other(array,val)
     return array[0]
 end
 
-25.times do 
+30.times do 
     users=[User.all.sample,User.all.sample]
     if users[0] != users[1]
         c=Chatroom.create(title:"#{users[0].name} + #{users[1].name}")
