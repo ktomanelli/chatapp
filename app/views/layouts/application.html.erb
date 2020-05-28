@@ -4,7 +4,6 @@
     <title>Chatapp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -15,19 +14,24 @@
     <%= link_to 'Create an Account', new_user_path %><br/>
     <%=yield%>
   <%else%>
+  <div id="navbar">
+  <h1>//Flack</h1>
+  <ul id="navlinks">
+    <p id="profile"><%= link_to "Welcome, #{@current_user.name}", user_path(@current_user) %></p>
     <p id="logout"><%= link_to 'logout', logout_path %></p>
+  </ul>
+  </div>
     <div id='app'>
-    <div id='sidebar'>
-        <ul>
+    
+        <ul id=sidebar>
           <%Chatroom.get_active_chatrooms(@current_user.id).each do |chatroom|%>
-            <li id="chatroom">
-              <img id="user_img" src="<%=chatroom.users[0].img_url%>">
-              <img id="user_img" src="<%=chatroom.users[1].img_url%>">
-              <%=link_to chatroom.title,chatroom_path(chatroom)%>
-            </li>
+              <%=link_to_unless_current(chatroom.title,chatroom_path(chatroom, :anchor=>"anchor")) do %>
+                  <li id="chatroom">
+                    <%=link_to chatroom.title, chatroom_path(chatroom), className: 'cur'%>
+                  </li>
+               <%end%>
           <%end%>
         </ul>
-    </div>
 
     <div id="messages">
         <%=yield%>

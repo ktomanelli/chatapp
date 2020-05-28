@@ -15,20 +15,32 @@
  */
 
 #app {
-  background-color: #121b1e;
+  background-color: #505050;
   color: white;
 }
 
 #sidebar {
+  list-style-type: none;
+  margin: 0;
+  padding-top: 15vh;
+  padding-left: 0;
+  padding-right: 0;
   position: fixed;
   overflow-y: scroll;
   width: 30%;
   top: 0;
-  bottom: 0;
 }
-
+#sidebar a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: aliceblue;
+  margin: 1%;
+  padding: 10%;
+  border-radius: 5px;
+}
 #messages {
-  padding-left: 30%;
+  padding-left: 31%;
   display: flex;
   flex-direction: column;
 }
@@ -47,19 +59,46 @@
   padding: 1%;
   border-radius: 25px;
 }
+
 #chatroom {
-  background-color: aliceblue;
-  margin: 1%;
-  border-radius: 5px;
+}
+#chatroom a#current {
+  background-color: #5fc9f8;
 }
 #user_img {
   width: 30px;
   height: 30px;
 }
-#logout {
-  text-align: right;
-}
 
+#navbar {
+  background-color: #1eb4e4;
+  color: aliceblue;
+  position: fixed;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  top: 0%;
+  height: 10%;
+  padding-bottom: 20px;
+}
+#navlinks {
+  display: flex;
+}
+#messageinput {
+  display: inline;
+}
+#messageinput #message_content {
+  top: 0;
+  margin: 0;
+  width: 85%;
+}
+#messageinput .submit {
+  top: 0;
+  margin: 0;
+  height: 5em;
+  width: 13%;
+}
 #anchor {
   overflow-anchor: auto;
   height: 1px;

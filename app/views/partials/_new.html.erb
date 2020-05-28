@@ -3,7 +3,7 @@
      <p><%= error %></p>
     <% end %>
 <% end %>
-
+<div id="messageinput">
 <%= form_for :message do |f| %>
 
 <%= f.text_field :content %>
@@ -12,5 +12,6 @@
 <%= f.hidden_field :to_id, :value=>@chatroom.get_other_user(@current_user).id%>
 <%= f.hidden_field :chatroom_id, :value=>@chatroom.id%>    
 
-<%= f.submit %>
+<%= f.submit "//", :class=>'submit'%>
 <% end %>
+</div>
