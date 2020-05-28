@@ -8,10 +8,10 @@ class MessagesController < ApplicationController
     def create
         @message = Message.create(message_params)
         if @message.valid?
-            redirect_to message_path(@message)
+            redirect_to chatroom_path(params[:id], anchor: "anchor")
         else
             flash[:errors] = @message.errors.full_messages
-            redirect_to new_message_path
+            redirect_to chatroom_path(params[:id], anchor: "anchor")
         end
     end
     

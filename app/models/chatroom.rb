@@ -15,4 +15,11 @@ class Chatroom < ApplicationRecord
             Chatroom.find(user_chatrooms.chatroom_id)
         end
     end
+
+    def get_other_user(user)
+        if self.users[0]==user
+            return self.users[1]
+        end
+        return self.users[0]
+    end
 end
