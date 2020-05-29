@@ -12,6 +12,7 @@ Message.destroy_all
 Chatroom.destroy_all
 Reply.destroy_all
 Reaction.destroy_all
+UserChatroom.destroy_all
 
 User.create(name:'Kyle',username:"ktomanelli",password:"k12345",img_url:"https://quiviracoalition.org/wp-content/uploads/2019/02/generic-person-icon-300x300.png")
 20.times do 
