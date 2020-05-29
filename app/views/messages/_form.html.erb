@@ -1,0 +1,15 @@
+<%= form_for @message do |f| %>
+
+<%= f.label :content, "Message" %>
+<%= f.text_field :content %>
+
+<%= f.hidden_field :from_id, :value=>@current_user.id%>
+
+<%= f.label :to_id %>
+<%= f.collection_select  :to_id, User.all, :id, :name %>
+    
+<%= f.label :chatroom_id %>
+<%= f.collection_select  :chatroom_id, Chatroom.all, :id, :title %>
+
+<%= f.submit %>
+<% end %>
