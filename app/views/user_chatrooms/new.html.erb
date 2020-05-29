@@ -1,0 +1,22 @@
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+     <p><%= error %></p>
+    <% end %>
+<% end %>
+
+<h3>New Chatroom</h3>
+<%= form_for @user_chatroom do |f| %>
+
+<%= f.hidden_field :chatroom_id, :value=>nil%>
+
+<%= f.label :user_id%>
+<%= f.text_field :user_id, list: "users_autocomplete" %>
+<datalist id="users_autocomplete">
+    <%User.all.each do |user|%>
+        <%if user.id != @current_user.id%>
+            <option value="<%=user.name%>">
+        <%end%>
+    <%end%>
+</datalist>
+<%= f.submit "Create New Chatroom"%>
+<% end %>

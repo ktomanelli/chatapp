@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  root 'sessions#home', as: 'home'
+  root 'users#show', as: 'home'
   resources :reactions
   resources :replies
   resources :chatrooms
   resources :messages
   resources :users
-
+  resources :user_chatrooms, only: [:new,:create]
   # get '/', to: 'sessions#home', as: 'home'
   get '/login', to: 'sessions#new', as: 'login'
   post '/login', to: 'sessions#create'

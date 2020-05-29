@@ -8,7 +8,7 @@
 <p>Bio: <%= @user.bio %></p>
 
 <% if @current_user.id  ==  @user.id %>
-<%= link_to "New  Chatroom", new_chatroom_path%>
+<%= link_to "New  Chatroom", new_user_chatroom_path%>
 <%= link_to "Edit Profile", edit_user_path(@user.id)%>
 <% if @current_user.chatrooms == nil %>
 <%= link_to "Chatrooms", chatroom_path(@current_user.chatrooms.first) %>

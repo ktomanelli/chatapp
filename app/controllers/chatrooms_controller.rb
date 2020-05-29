@@ -8,13 +8,17 @@ class ChatroomsController < ApplicationController
     end
     
     def create
-        @chatroom = Chatroom.create(chatroom_params)
-        if @chatroom.valid?
-            redirect_to chatroom_path(@chatroom.id)
-        else 
-           flash[:errors] = @chatroom.errors.full_messages
-           redirect_to new_chatroom_path 
-        end
+        # puts params
+        # @to_id = User.find_by(name:params[chatroom_data][to]).id
+        # @chatroom = Chatroom.create(title:params[chatroom_data][title],user_id:@current_user.id)
+        # UserChatroom.create(user_id:params[chatroom_data][from_id],chatroom_id:@chatroom.id)
+        # UserChatroom.create(user_id:@to_id,chatroom_id:@chatroom.id)
+        # if @chatroom.valid?
+        #     redirect_to chatroom_path(@chatroom.id)
+        # else 
+        #    flash[:errors] = @chatroom.errors.full_messages
+        #    redirect_to new_chatroom_path 
+        # end
     end
     
     def edit
