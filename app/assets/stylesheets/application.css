@@ -13,7 +13,13 @@
  *= require_tree .
  *= require_self
  */
-
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
 #app {
   background-color: #505050;
   color: white;
@@ -40,13 +46,14 @@
   border-radius: 5px;
 }
 #messages {
+  margin-top: 7%;
   padding-left: 31%;
   display: flex;
   flex-direction: column;
 }
 
 #from {
-  background-color: #5fc9f8;
+  background-color: #1eb4e4;
   color: black !important;
   padding: 1%;
   margin-left: auto;
@@ -63,7 +70,7 @@
 #chatroom {
 }
 #chatroom a#current {
-  background-color: #5fc9f8;
+  background-color: #1eb4e4;
 }
 #user_img {
   width: 30px;
@@ -72,7 +79,7 @@
 
 #navbar {
   background-color: #1eb4e4;
-  color: aliceblue;
+  color: #dcdcdc;
   position: fixed;
   display: inline-flex;
   justify-content: space-between;
@@ -91,6 +98,7 @@
 #messageinput #message_content {
   top: 0;
   margin: 0;
+  height: 4em;
   width: 85%;
 }
 #messageinput .submit {
@@ -102,4 +110,17 @@
 #anchor {
   overflow-anchor: auto;
   height: 1px;
+}
+#login {
+  margin: auto;
+  padding: 10px;
+  padding-left: 10%;
+}
+#logincontainer {
+  background-image: url("https://media.timeout.com/images/100559605/image.jpg");
+  background-size: cover;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }

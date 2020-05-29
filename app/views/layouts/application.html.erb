@@ -10,9 +10,11 @@
 
   <body>
   <%if @current_user==nil%>
-    <%= link_to 'login', login_path %><br/>
-    <%= link_to 'Create an Account', new_user_path %><br/>
-    <%=yield%>
+    <div id="logincontainer">
+      <div id="login">
+        <%=yield%>
+      </div>
+    </div>
   <%else%>
   <div id="navbar">
   <h1>//Flack</h1>
@@ -25,9 +27,9 @@
     
         <ul id=sidebar>
           <%Chatroom.get_active_chatrooms(@current_user.id).each do |chatroom|%>
-              <%=link_to_unless_current(chatroom.title,chatroom_path(chatroom, :anchor=>"anchor")) do %>
+              <%=link_to_unless_current(chatroom.title,chatroom_path(chatroom)) do %>
                   <li id="chatroom">
-                    <%=link_to chatroom.title, chatroom_path(chatroom), className: 'cur'%>
+                    <%=link_to chatroom.title, chatroom_path(chatroom), id: 'current'%>
                   </li>
                <%end%>
           <%end%>

@@ -26,7 +26,7 @@ def get_other(array,val)
     return array[0]
 end
 
-50.times do 
+100.times do 
     users=[User.all.sample,User.all.sample]
     if users[0] != users[1]
         c=Chatroom.create(title:"#{users[0].name} + #{users[1].name}")

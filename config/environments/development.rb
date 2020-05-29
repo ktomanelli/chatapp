@@ -1,4 +1,7 @@
 Rails.application.configure do
+
+   # Whitelist one hostname
+   config.hosts << "eb457711.ngrok.io"
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
