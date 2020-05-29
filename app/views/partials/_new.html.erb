@@ -9,9 +9,10 @@
 <%= f.text_field :content %>
 
 <%= f.hidden_field :from_id, :value=>@current_user.id%>
+<% if @current_user.chatrooms == nil %>
 <%= f.hidden_field :to_id, :value=>@chatroom.get_other_user(@current_user).id%>
 <%= f.hidden_field :chatroom_id, :value=>@chatroom.id%>    
-
+<% end %>
 <%= f.submit "//", :class=>'submit'%>
 <% end %>
 </div>
