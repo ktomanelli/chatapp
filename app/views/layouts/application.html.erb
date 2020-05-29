@@ -15,9 +15,12 @@
         <%=yield%>
       </div>
     </div>
+    <div id="bottomnav">
+      <h1> // Flack</h1>
+    </div>
   <%else%>
   <div id="navbar">
-  <h1>//Flack</h1>
+  <h1> // Flack</h1>
   <ul id="navlinks">
     <p id="profile"><%= link_to "Welcome, #{@current_user.name}", user_path(@current_user) %></p>
     <p id="logout"><%= link_to 'logout', logout_path %></p>

@@ -15,41 +15,56 @@
  */
 body,
 html {
-  height: 100%;
+  height: 87vh;
   margin: 0;
   padding: 0;
   border: 0;
 }
 #app {
-  background-color: #505050;
-  color: white;
+  bottom: 0;
+  top: 0;
+  height: 100%;
 }
 
 #sidebar {
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
   list-style-type: none;
   margin: 0;
   padding-top: 15vh;
   padding-left: 0;
   padding-right: 0;
-  position: fixed;
-  overflow-y: scroll;
   width: 30%;
-  top: 0;
+}
+#sidebar a#current {
+  height: 100%;
+
+  background-color: #1eb4e4;
+}
+#chatroom {
+  height: 10%;
 }
 #sidebar a {
   display: block;
-  width: 100%;
-  height: 100%;
+  height: 10%;
   background-color: aliceblue;
   margin: 1%;
-  padding: 10%;
   border-radius: 5px;
 }
+
 #messages {
+  background-color: #505050;
+  color: white;
+  height: 100%;
   margin-top: 7%;
   padding-left: 31%;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 }
 
 #from {
@@ -67,16 +82,16 @@ html {
   border-radius: 25px;
 }
 
-#chatroom {
-}
-#chatroom a#current {
-  background-color: #1eb4e4;
-}
 #user_img {
   width: 30px;
   height: 30px;
 }
-
+#bottomnav {
+  background-color: #1eb4e4;
+  color: #dcdcdc;
+  margin: 0;
+  height: 10;
+}
 #navbar {
   background-color: #1eb4e4;
   color: #dcdcdc;
@@ -86,31 +101,32 @@ html {
   width: 100%;
   margin: 0;
   top: 0%;
-  height: 10%;
   padding-bottom: 20px;
 }
 #navlinks {
   display: flex;
 }
 #messageinput {
+  position: relative;
+
+  right: 0;
+  bottom: 0;
   display: inline;
 }
 #messageinput #message_content {
-  top: 0;
-  margin: 0;
+  display: inline-block;
+  margin: 0 auto;
+  right: 0;
   height: 4em;
-  width: 85%;
+  width: 90%;
 }
 #messageinput .submit {
-  top: 0;
-  margin: 0;
+  display: inline-block;
+  width: 7%;
+  margin: 0 auto;
   height: 5em;
-  width: 13%;
 }
-#anchor {
-  overflow-anchor: auto;
-  height: 1px;
-}
+
 #login {
   margin: auto;
   padding: 10px;

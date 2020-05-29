@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
     
     def new
         @message = Message.new
+        @chatroom = Chatroom.find(params[:id])
     end
     
     def create
